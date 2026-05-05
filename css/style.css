@@ -795,35 +795,15 @@ section { padding: 85px 0; }
   color: rgba(255,255,255,0.65);
   padding: 65px 0 0;
 }
-.footer-brand-name {
+.footer-logo {
   display: block;
-  margin-bottom: 18px;
-  line-height: 1;
-}
-.footer-brand-name .fn-fiber {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-  color: white;
-  letter-spacing: 2px;
-}
-.footer-brand-name .fn-tower {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: var(--secondary);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  display: block;
-  margin-top: 2px;
-}
-.footer-brand-name .fn-tagline {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: block;
-  margin-top: 4px;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 .footer-desc {
   font-size: 0.88rem;
