@@ -795,7 +795,16 @@ section { padding: 85px 0; }
   color: rgba(255,255,255,0.65);
   padding: 65px 0 0;
 }
-.footer-logo { height: 48px; filter: brightness(0) invert(1); margin-bottom: 18px; }
+.footer-logo {
+  height: 70px;
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+  background: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  object-fit: contain;
+}
 .footer-desc {
   font-size: 0.88rem;
   line-height: 1.75;
