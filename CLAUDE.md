@@ -22,12 +22,13 @@ fibertower/
 ├── nosotros/index.html         # Quiénes Somos → URL: /nosotros/
 ├── servicios/index.html        # Servicios → URL: /servicios/
 ├── contactanos/index.html      # Contacto → URL: /contactanos/
-├── quienes-somos.html          # Redirect automático → /nosotros/
-├── servicios.html              # Redirect automático → /servicios/
-├── contacto.html               # Redirect automático → /contactanos/
+├── tecnologia/index.html       # Tecnología / Centro Técnico → URL: /tecnologia/
+├── quienes-somos.html          # Redirect meta-refresh → /nosotros/
+├── servicios.html              # Redirect meta-refresh → /servicios/
+├── contacto.html               # Redirect meta-refresh → /contactanos/
 ├── css/style.css               # Todos los estilos
 ├── js/main.js                  # JS: navbar scroll, contadores, lightbox galería
-├── sitemap.xml                 # Sitemap para Google
+├── sitemap.xml                 # Sitemap para Google (5 URLs)
 ├── robots.txt                  # Apunta al sitemap
 ├── logofiber.png               # Logo original (fondo blanco) — usado en navbar
 ├── Mantencion.png              # Foto de mantención original
@@ -48,7 +49,15 @@ fibertower/
     ├── evaluacion.png          # Imagen servicio Evaluación de Proyectos
     ├── recambio.png            # Imagen servicio Recambio de Rellenos
     ├── rellenostipos.png       # Imagen tipos de rellenos (laminar/splash)
-    └── electro.png             # Imagen servicio Servicios Electromecánicos
+    ├── electro.png             # Imagen servicio Servicios Electromecánicos
+    └── galeria2/               # Fotos específicas por componente (usadas en /tecnologia/)
+        ├── Ventiladores/       # Fotos de ventiladores
+        ├── motores/            # Fotos de motores eléctricos
+        ├── drift/              # Fotos de drift eliminators
+        ├── louvers/            # Fotos de louvers/persianas
+        ├── boquillas/          # Fotos de boquillas aspersoras
+        ├── distribucion/       # Fotos de sistema de distribución de agua
+        └── balanceo/           # Fotos de balanceo y análisis de vibraciones
 ```
 
 ## Paleta de Colores
@@ -65,6 +74,7 @@ Todas las páginas usan rutas absolutas (`/nosotros/`, `/servicios/`, etc.), NO 
 - Inicio: `/`
 - Quiénes Somos: `/nosotros/`
 - Servicios: `/servicios/`
+- Tecnología: `/tecnologia/`
 - Contacto: `/contactanos/`
 
 Las páginas internas (nosotros, servicios, contactanos) usan `../` para assets:
@@ -109,15 +119,35 @@ Layout alternado: impares fondo blanco imagen-izquierda, pares fondo `var(--ligh
 - 4 tarjetas info: teléfono, WhatsApp, email, emergencias 24/7
 - Formulario AJAX (Formsubmit.co) — ver sección Formulario de Contacto
 - Horarios de atención
-- Mapa Google Maps embed: Sexta Avenida 1340, San Miguel
+- Mapa Google Maps embed: Sexta Avenida 1340, Oficina 1202, San Miguel
 - Redes sociales (LinkedIn + WhatsApp)
-- FAQ acordeón (3 preguntas)
+- FAQ acordeón (11 preguntas: faq1, faq3, faq4 originales + faq5 a faq12 agregadas)
+
+### tecnologia/index.html
+Página Centro Técnico con sub-nav sticky y 8 secciones:
+1. `#funcionamiento` — Cómo funciona una torre de enfriamiento (diagrama + texto)
+2. `#rellenos` — Tipos de rellenos (laminar vs splash) con tabla comparativa
+3. `#componentes` — 6 component-cards con fotos reales de `images/galeria2/`:
+   - Ventiladores → `galeria2/Ventiladores/`
+   - Motores Eléctricos → `galeria2/motores/`
+   - Drift Eliminators → `galeria2/drift/`
+   - Louvers → `galeria2/louvers/`
+   - Boquillas → `galeria2/boquillas/`
+   - Sistema Distribución → `galeria2/distribucion/`
+4. `#mantenimiento` — Programa de mantenimiento preventivo (tabla de frecuencias)
+5. `#balanceo` — Balanceo y Vibraciones, fotos desde `galeria2/balanceo/`
+6. `#problemas` — Problemas comunes y soluciones (tarjetas diagnóstico)
+7. `#agua` — Tratamiento del agua (parámetros, inhibidores, biocidas)
+8. `#galeria` — Galería lightbox (reutiliza `.gallery-grid` / `.gallery-item` de style.css)
+
+CSS inline en `<style>` al inicio del `<body>`. Sub-nav: `position:sticky; top:76px; z-index:98`.
+Secciones con `scroll-margin-top: 130px` (navbar 76px + sub-nav 45px + margen).
 
 ## Datos de Contacto
 - Teléfono: `+56 9 7807 9037` / `tel:+56978079037`
 - WhatsApp: `+56 9 8832 7996` / `https://wa.me/56988327996`
 - Email: `contacto@fibertower.cl`
-- Dirección: Sexta Avenida 1340, Dpto 1202, San Miguel, Santiago
+- Dirección: Sexta Avenida 1340, Oficina 1202, San Miguel, Santiago
 - LinkedIn: `https://www.linkedin.com/company/fibertowerchile/`
 - Redes activas: LinkedIn y WhatsApp. Facebook e Instagram NO se usan.
 
