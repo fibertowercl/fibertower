@@ -91,13 +91,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Contact form — spinner al enviar + banner de éxito al volver con ?enviado=1
+// Contact form — AJAX, sin salir de la página
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', function () {
-    const btn = this.querySelector('.btn-submit');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    const originalHTML = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-  });
 
+    fetch('https://formsubmit.co/ajax/fibertowerchile@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(() => {
+      btn.innerHTML = '<i class="fas fa-check"></i> ¡Solicitud enviada!';
+      btn.style.background = '#28a745';
+      form.reset();
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
+    })
+    .catch(() => {
+      btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error al enviar — intente de nuevo';
+      btn.style.background = '#dc3545';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
+    });
+  });
 }
