@@ -1209,7 +1209,8 @@ section { padding: 85px 0; }
 }
 @media (max-width: 768px) {
   section { padding: 60px 0; }
-  .hero-section { height: 60vh; padding: 0; }
+  .hero-section { height: 70vh; min-height: 520px; padding: 0; }
+  .carousel-caption-custom { top: 58%; width: 92%; }
   .navbar-brand img { max-height: 160px; }
   .main-navbar.scrolled .navbar-brand img { max-height: 125px; }
   .carousel-control-prev { left: 10px; }
