@@ -988,7 +988,16 @@
     document.querySelectorAll(sel).forEach(function(img){
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', function(){ openTechLightbox(this.src, this.alt); });
-      img.addEventListener('touchend', function(e){ e.preventDefault(); openTechLightbox(this.src, this.alt); });
+      var touchStartX, touchStartY;
+      img.addEventListener('touchstart', function(e){
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, {passive: true});
+      img.addEventListener('touchend', function(e){
+        var dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if(dx < 10 && dy < 10){ e.preventDefault(); openTechLightbox(this.src, this.alt); }
+      });
     });
   });
   function openTechLightbox(src, alt){
