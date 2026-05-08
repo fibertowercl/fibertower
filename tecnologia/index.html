@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro Técnico Fibertower: guía completa sobre el funcionamiento de torres de enfriamiento industrial, tipos de rellenos evaporativos, componentes, mantenimiento y tratamiento de agua en Chile.">
+  <title>Tecnología | Torres de Enfriamiento Industrial | Fibertower</title>
+  <meta name="keywords" content="cómo funciona una torre de enfriamiento, rellenos evaporativos laminar splash, componentes torre enfriamiento, mantenimiento torres enfriamiento Chile">
+  <link rel="canonical" href="https://fibertower.cl/tecnologia/">
+  <link rel="icon" href="../logofiber.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <style>
+    .tech-subnav {
+      background: var(--dark);
+      position: sticky;
+      top: 76px;
+      z-index: 98;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tech-subnav-inner {
+      display: flex;
+      gap: 2px;
+      padding: 8px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tech-subnav-inner::-webkit-scrollbar { display: none; }
+    .tech-subnav-inner a {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    .tech-subnav-inner a:hover {
+      color: white;
+      background: rgba(0,150,199,0.25);
+    }
+    .tech-section { scroll-margin-top: 130px; }
+    .tech-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--secondary);
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .tech-accent-bar {
+      min-width: 4px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--secondary), var(--primary));
+      border-radius: 2px;
+      margin-top: 4px;
+    }
+    .tech-section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .comp-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border-top: 3px solid var(--secondary);
+      height: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .comp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(2,62,125,0.14);
+    }
+    .comp-card-img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+    .comp-card-body { padding: 22px 24px 26px; }
+    .comp-icon {
+      width: 42px; height: 42px;
+      background: rgba(0,150,199,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--secondary);
+      margin-bottom: 12px;
+    }
+    .comp-card h5 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
+    .comp-card p { color: var(--gray); font-size: 0.88rem; margin: 0; line-height: 1.65; }
+    .relleno-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .relleno-card-img { width:100%; height:240px; object-fit:cover; display:block; }
+    .relleno-card-body { padding: 28px; border-top: 3px solid var(--secondary); }
+    .relleno-card.splash .relleno-card-body { border-top-color: var(--accent); }
+    .relleno-label {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.8px;
+      font-weight: 700; font-family: 'Montserrat', sans-serif;
+      margin-bottom: 8px; display: block;
+    }
+    .relleno-card .relleno-label { color: var(--secondary); }
+    .relleno-card.splash .relleno-label { color: var(--accent); }
+    .tech-check li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--gray);
+      font-size: 0.91rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+    }
+    .tech-check li:last-child { border-bottom: none; }
+    .tech-check li i { color: var(--secondary); font-size: 0.85rem; min-width: 16px; }
+    .tech-check { padding: 0; margin: 0; }
+    .prob-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 22px;
+      border-left: 3px solid var(--accent);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      height: 100%;
+    }
+    .prob-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,119,34,0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .prob-card h6 { color: var(--primary); font-size: 0.93rem; margin-bottom: 6px; }
+    .prob-card p { color: var(--gray); font-size: 0.85rem; margin: 0; }
+    .param-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+      border-bottom: 3px solid var(--secondary);
+    }
+    .param-card i { font-size: 1.6rem; color: var(--secondary); margin-bottom: 10px; display: block; }
+    .param-card h6 { color: var(--primary); font-size: 0.9rem; margin-bottom: 4px; }
+    .param-card p { color: var(--gray); font-size: 0.8rem; margin: 0; }
+    .tech-hero-img {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(2,62,125,0.18);
+    }
+    .tech-hero-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .small-img-row img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .small-img-row img:hover { transform: scale(1.03); }
+    .installed-img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+    .vibration-stat {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--primary);
+    }
+    .vibration-stat i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; display: block; }
+    .vibration-stat h5 { color: var(--primary); font-size: 1rem; margin-bottom: 6px; }
+    .vibration-stat p { color: var(--gray); font-size: 0.85rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <ul class="contact-info mb-0">
+          <li><i class="fas fa-phone-alt"></i> +56 9 8832 7996</li>
+          <li><i class="fas fa-envelope"></i> contacto@fibertower.cl</li>
+          <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
+        </ul>
+      </div>
+      <div class="col-lg-5">
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/fibertowerchile/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/56988327996" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg main-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="../images/newlogo.png" alt="Fibertower Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/nosotros/">Quiénes Somos</a></li>
+        <li class="nav-item"><a class="nav-link" href="/servicios/">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/tecnologia/">Tecnología</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-sm px-4 py-2 fw-bold text-white rounded-pill"
+             href="/contactanos/"
+             style="background: var(--accent); font-family: 'Montserrat', sans-serif; font-size: 0.82rem; letter-spacing: 0.5px;">
+            Contáctanos
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Centro Técnico</h1>
+    <p style="color:rgba(255,255,255,0.75); font-size:1rem; margin-top:8px; margin-bottom:8px;">Biblioteca técnica sobre torres de enfriamiento industrial</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+        <li class="breadcrumb-item active">Tecnología</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- STICKY SECTION NAV -->
+<div class="tech-subnav">
+  <div class="container">
+    <div class="tech-subnav-inner">
+      <a href="#funcionamiento"><i class="fas fa-circle-notch me-1"></i>Funcionamiento</a>
+      <a href="#rellenos"><i class="fas fa-layer-group me-1"></i>Rellenos</a>
+      <a href="#componentes"><i class="fas fa-cogs me-1"></i>Componentes</a>
+      <a href="#mantenimiento"><i class="fas fa-wrench me-1"></i>Mantención</a>
+      <a href="#balanceo"><i class="fas fa-chart-line me-1"></i>Balanceo</a>
+      <a href="#problemas"><i class="fas fa-exclamation-triangle me-1"></i>Problemas</a>
+      <a href="#agua"><i class="fas fa-tint me-1"></i>Tratamiento</a>
+      <a href="#galeria"><i class="fas fa-images me-1"></i>Galería</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: FUNCIONAMIENTO ===== -->
+<section id="funcionamiento" class="tech-section" style="padding: 85px 0; background: white;">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">01 — Principios Básicos</span>
+        <h2 class="section-title" style="margin-bottom:0;">Cómo Funciona una Torre de Enfriamiento</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:40px;"></div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <p style="color:var(--gray); font-size:1rem; line-height:1.85; margin-bottom:20px;">
+          Las torres de enfriamiento funcionan mediante un proceso de <strong style="color:var(--primary);">enfriamiento evaporativo</strong>, donde el agua caliente proveniente de procesos industriales entra en contacto con el flujo de aire para disipar calor hacia la atmósfera.
+        </p>
+        <p style="color:var(--gray); font-size:0.97rem; line-height:1.8; margin-bottom:28px;">
+          Durante este proceso, una pequeña parte del agua se evapora, permitiendo reducir la temperatura del agua restante antes de ser recirculada nuevamente al sistema industrial.
+        </p>
+        <div style="background:var(--light); border-radius:14px; padding:28px;">
+          <h5 style="color:var(--primary); font-size:0.95rem; margin-bottom:18px; text-transform:uppercase; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Elementos Principales</h5>
+          <ul class="tech-check">
+            <li><i class="fas fa-check-circle"></i> Ventiladores — generan el flujo de aire</li>
+            <li><i class="fas fa-check-circle"></i> Rellenos evaporativos — aumentan el contacto agua/aire</li>
+            <li><i class="fas fa-check-circle"></i> Sistema de distribución de agua</li>
+            <li><i class="fas fa-check-circle"></i> Eliminadores de gotas</li>
+            <li><i class="fas fa-check-circle"></i> Bandeja de agua fría</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="tech-hero-img">
+          <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama.jpg" alt="Diagrama de funcionamiento torre de enfriamiento">
+        </div>
+      </div>
+    </div>
+    <div class="row g-3 mt-4 small-img-row">
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama2.jpg" alt="Diagrama flujo térmica">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama3.jpg" alt="Esquema evaporativo">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre1.jpg" alt="Torre de enfriamiento industrial">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: RELLENOS ===== -->
+<section id="rellenos" class="tech-section" style="padding: 85px 0; background: var(--light);">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">02 — Tipos y Aplicaciones</span>
+        <h2 class="section-title" style="margin-bottom:0;">Rellenos Evaporativos</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:16px;"></div>
+    <p style="color:var(--gray); font-size:0.97rem; max-width:720px; margin-bottom:40px; line-height:1.8;">
+      Los rellenos evaporativos aumentan la superficie de contacto entre el agua y el aire, mejorando la eficiencia del intercambio térmico. La selección del tipo correcto depende de las condiciones operacionales y la calidad del agua.
+    </p>
+    <div class="row g-4 mb-5">
+      <!-- Laminar -->
+      <div class="col-lg-6">
+        <div class="relleno-card">
+          <img class="relleno-card-img" src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar.jpg" alt="Relleno Laminar">
+          <div class="relleno-card-body">
+            <span class="relleno-label">Relleno Laminar</span>
+            <h4 style="color:var(--primary); margin-bottom:14px;">Mayor Eficiencia Térmica</h4>
+            <ul class="tech-check">
+              <li><i class="fas fa-check-circle"></i> Mayor eficiencia térmica</li>
+              <li><i class="fas fa-check-circle"></i> Recomendado para agua limpia</li>
+              <li><i class="fas fa-check-circle"></i> Mayor superficie de contacto</li>
+              <li><i class="fas fa-check-circle"></i> Menor resistencia al flujo de aire</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Splash -->
+      <div class="col-lg-6">
+        <div class="relleno-card splash">
+          <img class="relleno-card-img" src="../images/galeria/2_Rellenos/LaminarvsSplash/splash.jpg" alt="Relleno Splash">
+          <div class="relleno-card-body">
+            <span class="relleno-label">Relleno Splash</span>
+            <h4 style="color:var(--primary); margin-bottom:14px;">Alta Resistencia Industrial</h4>
+            <ul class="tech-check">
+              <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Ideal para agua con sedimentos</li>
+              <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Mayor resistencia a incrustaciones</li>
+              <li><i class="fas fa-check-circle" style="color:var(--accent)"></i> Mejor desempeño en ambientes industriales exigentes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rellenos instalados -->
+    <div style="margin-bottom:16px;">
+      <span class="tech-label">Rellenos en Instalación</span>
+    </div>
+    <div class="row g-3 installed-img">
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado1.jpg" alt="Rellenos instalados en torre">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado2.jpg" alt="Rellenos evaporativos instalados">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado3.jpg" alt="Rellenos en operación">
+        </div>
+      </div>
+    </div>
+    <!-- Laminar types row -->
+    <div class="row g-3 mt-3 small-img-row">
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar2.jpg" alt="Relleno laminar detalle">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar3.jpg" alt="Textura relleno laminar">
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar4.jpg" alt="Rellenos tipo laminar">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: COMPONENTES ===== -->
+<section id="componentes" class="tech-section" style="padding: 85px 0; background: white;">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">03 — Ingeniería de Sistemas</span>
+        <h2 class="section-title" style="margin-bottom:0;">Componentes Principales</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:16px;"></div>
+    <p style="color:var(--gray); font-size:0.97rem; max-width:720px; margin-bottom:42px; line-height:1.8;">
+      Cada componente de una torre de enfriamiento cumple una función crítica para garantizar el rendimiento térmico y la operación eficiente del sistema.
+    </p>
+    <div class="row g-4">
+      <!-- Ventiladores -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/IScP657EeF5l-XVQ-F6cgI-ZWDyfJX9VZppXB63ea6P7rGPfbe8yOE8fJpsskUog60zqc_6rgxj-dyJWAPZtPgNU68MYMIeBKPCMW02eAEkPyEjVpdCIUbRvMVkVUxO_GOy3HiILPCVWBNUa8dua2kfr6LmvqeaMnnCGGrER9B0yTG24Vpu9tPCJkE.jpg" alt="Ventiladores torre de enfriamiento">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-fan"></i></div>
+            <h5>Ventiladores</h5>
+            <p>Generan el flujo de aire necesario para el proceso evaporativo. Su balanceo y estado determinan directamente la eficiencia y el nivel de vibraciones del sistema.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Motores -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/OrW-O-dGgtIcpEn-GZhDc1MlcCkyWoxrTRkk-HHiFpUcinHOD_SY5zFKp8yGE_Kixf3juGTAZN5uZ8HnSMtS5fe-izR1TJMzfrzssYJ6pvqo_Vuzi2QlF7cxHO2SI7xUjdl_HDkUK3EFPljy3koplh9NWMbbJsV4aFYQs53bZ3.jpg" alt="Motores eléctricos torre de enfriamiento">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-bolt"></i></div>
+            <h5>Motores Eléctricos</h5>
+            <p>Impulsan los ventiladores y sistemas mecánicos. Su inspección periódica previene fallas eléctricas y mecánicas que pueden detener la operación.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Drift Eliminators -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/W-86O_8ya2m2n2IVw-fNHgHIHQJG38HxuA6P641kBqgtbjeVOF9ZUt3XmriC5va1LQC2Mag6uIYJXB4wwmMxv3q-AqTxTWoExhaAvV-RqH3sBMY0DG4tO9IjzTbJNnUxcAnFONU9ALUom2Q4HSCktjKg-GIr0BcJ7mSnmf5R8kOMIgb4ukMw4tc6vF.jpg" alt="Drift Eliminators">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-wind"></i></div>
+            <h5>Drift Eliminators</h5>
+            <p>Reducen la pérdida de gotas de agua hacia el exterior, minimizando el consumo de agua y previniendo problemas de contaminación en el entorno.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Louvers -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/ZPA6GCTFWjK_oStyYSSPK44cMrnfDmEyFRBNcjqH9GfTD31zsdN15JYFpGxlnKJcd1ipZEcGvYeVmwCzv19npBN503V4LedfTGIQvyft7Z5K6srJnsE27_ElubvFGi2HBEGAK7fBBW615vVZlu2Sl5THkZusoREJjV4whfHdxtY1mveOzbrx0zz10D.jpg" alt="Louvers sistema de aire">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-sliders-h"></i></div>
+            <h5>Louvers</h5>
+            <p>Controlan el ingreso de aire a la torre y ayudan a reducir salpicaduras externas, mejorando la eficiencia del flujo y protegiendo el entorno.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Boquillas -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/in3pRY9jXYiouaPmj07mtJDs46Nv3wuciI4hu4JBTRXnmN06qVsAyScX-xF7wgWTFLfvIxVn1eRWP3O8h-8HK0J98dcoHgedB7s0MAD-MDtrlmaX3r6z4gkB9mfSTZbvf8Q8_nKYqvRpCBgCFx8dlkuXWTREp7nQpJPF2wF0xPw65OsVesboNAVyk8.jpg" alt="Boquillas distribución agua">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-tint"></i></div>
+            <h5>Boquillas</h5>
+            <p>Distribuyen uniformemente el agua sobre los rellenos evaporativos. Su estado y limpieza son fundamentales para el rendimiento térmico del sistema.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sistema general -->
+      <div class="col-lg-4 col-md-6">
+        <div class="comp-card">
+          <img class="comp-card-img" src="../images/galeria/3_componentes/phFh-28Yfwgbde6aLoY-r4AXG5WjXzr5AYwN1PxNEYSjW-gm_8QgBj77OxPDdGctkDuNTDaWiJKK8ymFcxLSi3ca2CsgdXKv31lY11FU3MUh_9-Uy4zEOb7sEKRkOckia-8Mm8qKDB8WNWscKOuWn6bC-rXDKHUXF3Dine3KojZLJR3rTF-SJ0NGR3.jpg" alt="Sistema de distribución de agua">
+          <div class="comp-card-body">
+            <div class="comp-icon"><i class="fas fa-project-diagram"></i></div>
+            <h5>Sistema de Distribución</h5>
+            <p>La red de tuberías y colectores lleva el agua caliente a los distribuidores. Un sistema bien diseñado garantiza cobertura uniforme sobre los rellenos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row extra componentes -->
+    <div class="row g-3 mt-4 small-img-row">
+      <div class="col-6">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/3_componentes/pp09P9e5ZCrPJ6DRAf_7lD1HbvKNLNXChytn_30-6IjE4WQC_G2TQr36tIXLwtJRFa9rFh7JpYCYGKbSM14Hc0u34WXNU_LUYA6oyM4uEEfnshi9lm_ASHaObbFJtxv6g7WRzZTjIfgY_tzPGJ6sk0QJ7G7swFAzTpghw5hk-Ut3tffzR4rFEoRhYM.jpg" alt="Componentes mecánicos torre">
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/3_componentes/rJuOwM9yf92XuHGql5gqEYcdaaOAi1kaSMWBJxXFFjr_Rhkxa2d9v6l1aRfcMHGSDKB9eZAUhKt_PFO3y1u6WuzjYaBoVSEvHLYL_2EboiEUa_KrmEzrU8i_Xl8XZo05WqXYKEKOCudwpifpP8HHQcc1M0IukzzS6fMy1hc2ZgkUoxBN6zA0pKCt6s.jpg" alt="Sistema interno torre de enfriamiento">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: MANTENIMIENTO ===== -->
+<section id="mantenimiento" class="tech-section" style="padding: 85px 0; background: var(--light);">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">04 — Operación y Confiabilidad</span>
+        <h2 class="section-title" style="margin-bottom:0;">Mantenimiento Preventivo</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:40px;"></div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <p style="color:var(--gray); font-size:0.97rem; line-height:1.8; margin-bottom:22px;">
+          El mantenimiento preventivo permite detectar problemas antes de que afecten el rendimiento y la continuidad operacional de la torre.
+        </p>
+        <p style="color:var(--gray); font-size:0.95rem; line-height:1.8; margin-bottom:28px;">
+          Las inspecciones periódicas son clave para maximizar la eficiencia operacional y prolongar la vida útil del sistema.
+        </p>
+        <div class="row g-3 mb-4">
+          <div class="col-6">
+            <div style="background:white; border-radius:12px; padding:18px; text-align:center; box-shadow:0 2px 14px rgba(0,0,0,0.06);">
+              <i class="fas fa-chart-line" style="color:var(--secondary); font-size:1.5rem; margin-bottom:8px; display:block;"></i>
+              <div style="font-size:0.82rem; color:var(--gray);">Mejora eficiencia térmica</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="background:white; border-radius:12px; padding:18px; text-align:center; box-shadow:0 2px 14px rgba(0,0,0,0.06);">
+              <i class="fas fa-shield-alt" style="color:var(--secondary); font-size:1.5rem; margin-bottom:8px; display:block;"></i>
+              <div style="font-size:0.82rem; color:var(--gray);">Reduce fallas mecánicas</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="background:white; border-radius:12px; padding:18px; text-align:center; box-shadow:0 2px 14px rgba(0,0,0,0.06);">
+              <i class="fas fa-bolt" style="color:var(--secondary); font-size:1.5rem; margin-bottom:8px; display:block;"></i>
+              <div style="font-size:0.82rem; color:var(--gray);">Disminuye consumo energético</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="background:white; border-radius:12px; padding:18px; text-align:center; box-shadow:0 2px 14px rgba(0,0,0,0.06);">
+              <i class="fas fa-clock" style="color:var(--secondary); font-size:1.5rem; margin-bottom:8px; display:block;"></i>
+              <div style="font-size:0.82rem; color:var(--gray);">Prolonga vida útil</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:white; border-radius:14px; padding:26px; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+          <h5 style="color:var(--primary); font-size:0.9rem; margin-bottom:16px; text-transform:uppercase; letter-spacing:1px; font-family:'Montserrat',sans-serif;">Tareas más Comunes</h5>
+          <ul class="tech-check">
+            <li><i class="fas fa-check-circle"></i> Inspección visual y estructural completa</li>
+            <li><i class="fas fa-check-circle"></i> Limpieza de relleno y distribuidores</li>
+            <li><i class="fas fa-check-circle"></i> Revisión y lubricación del sistema motriz</li>
+            <li><i class="fas fa-check-circle"></i> Balanceo de ventiladores y rodetes</li>
+            <li><i class="fas fa-check-circle"></i> Análisis de vibraciones</li>
+            <li><i class="fas fa-check-circle"></i> Reemplazo de componentes desgastados</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="tech-hero-img">
+          <img src="../images/galeria/4_mantenimiento/ATLf7g4F73f8O-m1tscReqk8VlrUZUI9-HNa1GDgxsrOV00HQ0dcxCbGRU21OhP3YyPpeI-c0AGiU6D5ScavD3yntn0p-L-WNwsimwh-g04C4U9RZkP_AGYojuxXu621DdFKdIDN5fdbt-vXWyBC8rVvdsEPCVX7BPWeq1_eR_hS5luqVwq7AViq.jpg" alt="Técnico en mantenimiento preventivo">
+        </div>
+      </div>
+    </div>
+    <!-- Maintenance image row -->
+    <div class="row g-3 mt-4 small-img-row">
+      <div class="col-3">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/4_mantenimiento/3DTUxL2pgVYzymB8Ggsevxqmehb7ShobTVVKwEgLrPxANl8dg3XezytNSAFaO05-l7kbfNI7U_dUdk0dZERbJYjl5oxpiEf2LaggrHMt24ENKZ88fTWRoG8dvuQ0PrCRMuP7ZScJrTbi2aghMFwQ9isNZ6kfQX7CYKsGJ7prNOrZ6-bQr5o3tlkH.jpg" alt="Mantenimiento industrial">
+        </div>
+      </div>
+      <div class="col-3">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/4_mantenimiento/6162F3LdAvbohe5MbEHtWyqZc3G0TPqJwbgh20Bg9gYZJm7ZFLhnpwwvoLGnIWhQFA9e5Ukm_36y0iNP_-VraDmlVb4c4QmWNyHRqy0HdYAS5s_PgFQnh1Sj8ykZapGh1w1lJnGVtS3pU0GbX_C8zOEjxYCDkOBFAqpQTT0qRGyDLoDaoHOdIHia.jpg" alt="Técnico en terreno">
+        </div>
+      </div>
+      <div class="col-3">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/4_mantenimiento/QeOmC00gFAT5_usgFdzy18An-4xCRP1t5ATTME2_aQ5pO2_v24F6KxGQyhNk7euz0T6pxpI-1_fAqK9cDyVBjteAck5qebx0sZc7Ymk0WJcFxYC19uCg30K0dfL9eEcB9UpUjnBNDxeR_vtiZxMMZpgdButCdBb2NP8c62V93bvmdMyHPKQOxUvwhu.jpg" alt="Inspección de torre">
+        </div>
+      </div>
+      <div class="col-3">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/4_mantenimiento/jEGq3_inL47xmMDzNj1zEZ4sgSFTBw6LdzEySjOA6QmZChR9jWbV8zqQtwBuU_5VqaRg4Iu54WhEBMntQIO4wNUc7ksKitGJE_TpuXXOaAVGejEFEcn_CNRNBQLxIfpszLqYbSdw1DyYKPJlgNk9fpqSPJI6vi1CZ1N9uW6dXKp-VcUj9CHivd_j.jpg" alt="Revisión de componentes">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: BALANCEO Y VIBRACIONES ===== -->
+<section id="balanceo" class="tech-section" style="padding: 85px 0; background: white;">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">05 — Diagnóstico Mecánico</span>
+        <h2 class="section-title" style="margin-bottom:0;">Balanceo y Vibraciones</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:40px;"></div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7">
+        <p style="color:var(--gray); font-size:0.97rem; line-height:1.8; margin-bottom:22px;">
+          Las vibraciones excesivas pueden generar desgaste prematuro, daños mecánicos y pérdida de eficiencia operacional. El análisis vibracional y el balanceo dinámico son herramientas clave para la confiabilidad industrial.
+        </p>
+        <p style="color:var(--gray); font-size:0.95rem; line-height:1.8; margin-bottom:32px;">
+          Estas técnicas ayudan a mejorar la confiabilidad y prolongar la vida útil de los equipos rotativos, reduciendo significativamente el riesgo de paradas no programadas.
+        </p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="vibration-stat">
+              <i class="fas fa-tachometer-alt"></i>
+              <h5>Desalineaciones</h5>
+              <p>Detección de ejes y poleas fuera de alineación que generan desgaste prematuro</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vibration-stat">
+              <i class="fas fa-circle-notch"></i>
+              <h5>Balanceo Dinámico</h5>
+              <p>Corrección de desbalanceo en ventiladores para reducir vibración y ruido</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vibration-stat">
+              <i class="fas fa-cog"></i>
+              <h5>Rodamientos</h5>
+              <p>Identificación de desgaste en rodamientos mediante análisis de espectro de vibración</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vibration-stat">
+              <i class="fas fa-chart-bar"></i>
+              <h5>Análisis Espectral</h5>
+              <p>Diagnóstico avanzado con instrumentación técnica para detectar fallas incipientes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="tech-hero-img" style="margin-bottom:16px;">
+          <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre2.jpg" alt="Análisis de vibraciones en torre industrial">
+        </div>
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre3.jpg" alt="Torre industrial en operación" style="width:100%; height:200px; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: PROBLEMAS COMUNES ===== -->
+<section id="problemas" class="tech-section" style="padding: 85px 0; background: var(--light);">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar" style="background:linear-gradient(to bottom, var(--accent), #c85a00);"></div>
+      <div>
+        <span class="tech-label" style="color:var(--accent);">06 — Diagnóstico y Prevención</span>
+        <h2 class="section-title" style="margin-bottom:0;">Problemas Comunes</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:16px;"></div>
+    <p style="color:var(--gray); font-size:0.97rem; max-width:720px; margin-bottom:40px; line-height:1.8;">
+      La falta de mantenimiento puede provocar diversos problemas operacionales que afectan directamente el rendimiento de la torre. Una evaluación técnica periódica permite identificar estos problemas antes de que provoquen fallas mayores.
+    </p>
+    <div class="row g-4 mb-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-layer-group"></i></div>
+          <h6>Incrustaciones Minerales</h6>
+          <p>Depósitos de cal y minerales reducen la eficiencia del relleno y obstruyen boquillas, disminuyendo el intercambio térmico.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-radiation-alt"></i></div>
+          <h6>Corrosión Estructural</h6>
+          <p>El contacto permanente con agua y la humedad deteriora la estructura metálica y las conexiones, comprometiendo la integridad de la torre.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-bacterium"></i></div>
+          <h6>Crecimiento Biológico</h6>
+          <p>Algas y bacterias, incluida Legionella, proliferan en agua estancada o sin tratamiento adecuado, generando riesgos sanitarios.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-wave-square"></i></div>
+          <h6>Vibraciones Excesivas</h6>
+          <p>Desbalanceo de ventiladores, desgaste de rodamientos o desalineaciones generan vibraciones que aceleran el deterioro mecánico.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-compress-alt"></i></div>
+          <h6>Deterioro de Rellenos</h6>
+          <p>Con el tiempo los rellenos se deforman, colapsan o se incrustan, reduciendo la superficie de contacto y la eficiencia de enfriamiento.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="prob-card">
+          <div class="prob-icon"><i class="fas fa-thermometer-half"></i></div>
+          <h6>Pérdida de Eficiencia Térmica</h6>
+          <p>La combinación de varios problemas resulta en agua que no alcanza la temperatura de diseño, afectando los procesos industriales asociados.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Problemas images -->
+    <div class="row g-3 small-img-row">
+      <div class="col-6">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <img src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar5.jpg" alt="Rellenos con incrustaciones">
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <img src="../images/galeria/5_limpieza/nzJaVDh91XKPL0E6Aqi5vwv8c_BtYGHupsXR7U1Ppd4Wp9fRtK6Pip3iIYUW7sozTbeTqs5_JCRA5AabLG-Eaob_Wf_PtPfl1cSx5zSACjyjxMthnPvzqN2GpGeEM0qtp3KpUUT9ks3bikSX5d5BX87WfXIuVLAJD5TjySsJuZwJ0_KwwDn5h3ip.jpg" alt="Limpieza de torre de enfriamiento">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: TRATAMIENTO DE AGUA ===== -->
+<section id="agua" class="tech-section" style="padding: 85px 0; background: white;">
+  <div class="container">
+    <div class="tech-section-header">
+      <div class="tech-accent-bar"></div>
+      <div>
+        <span class="tech-label">07 — Control y Calidad</span>
+        <h2 class="section-title" style="margin-bottom:0;">Tratamiento de Agua</h2>
+      </div>
+    </div>
+    <div class="section-divider" style="margin-bottom:40px;"></div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <div class="tech-hero-img">
+          <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama2.jpg" alt="Sistema de tratamiento de agua industrial">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p style="color:var(--gray); font-size:0.97rem; line-height:1.8; margin-bottom:24px;">
+          El tratamiento adecuado del agua es fundamental para prevenir incrustaciones, corrosión y proliferación bacteriana dentro del sistema, mejorando la eficiencia y reduciendo el desgaste de componentes internos.
+        </p>
+        <p style="color:var(--gray); font-size:0.95rem; line-height:1.8; margin-bottom:32px;">
+          El control regular de parámetros clave permite mantener un funcionamiento eficiente, seguro y conforme a normativas sanitarias.
+        </p>
+        <div style="margin-bottom:16px;">
+          <span class="tech-label">Parámetros de Control</span>
+        </div>
+        <div class="row g-3">
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-bolt"></i>
+              <h6>Conductividad</h6>
+              <p>Concentración de minerales disueltos</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-flask"></i>
+              <h6>pH</h6>
+              <p>Control de acidez y alcalinidad</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-tint"></i>
+              <h6>Dureza</h6>
+              <p>Prevención de incrustaciones calcáreas</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-microscope"></i>
+              <h6>Biocidas</h6>
+              <p>Control bacteriológico y Legionella</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-filter"></i>
+              <h6>Sólidos Disueltos</h6>
+              <p>Control de SDT para evitar obstrucciones</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="param-card">
+              <i class="fas fa-shield-alt"></i>
+              <h6>Anticorrosivos</h6>
+              <p>Protección de metales internos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 8: GALERÍA TÉCNICA ===== -->
+<section id="galeria" class="tech-section" style="padding: 85px 0; background: var(--dark);">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-7">
+        <span class="section-label" style="color:var(--secondary);">08 — Documentación Visual</span>
+        <h2 class="section-title" style="color:white;">Galería Técnica</h2>
+        <div class="section-divider center"></div>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6);">Instalaciones industriales, componentes, trabajos técnicos y sistemas de enfriamiento.</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre1.jpg" alt="Torre de enfriamiento industrial">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre2.jpg" alt="Sistema industrial de enfriamiento">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/TorreIndustrial/torre3.jpg" alt="Torres de enfriamiento en planta">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama.jpg" alt="Diagrama funcionamiento torre">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama2.jpg" alt="Flujo térmico evaporativo">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/1_Funcionamiento/Diagrama/diagrama3.jpg" alt="Esquema de enfriamiento">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/2_Rellenos/LaminarvsSplash/laminar.jpg" alt="Relleno laminar evaporativo">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/2_Rellenos/LaminarvsSplash/splash.jpg" alt="Relleno splash industrial">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado1.jpg" alt="Rellenos instalados en torre">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado2.jpg" alt="Rellenos evaporativos en operación">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/2_Rellenos/rellenosinstalados/instalado3.jpg" alt="Sistema de rellenos instalado">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/4_mantenimiento/3DTUxL2pgVYzymB8Ggsevxqmehb7ShobTVVKwEgLrPxANl8dg3XezytNSAFaO05-l7kbfNI7U_dUdk0dZERbJYjl5oxpiEf2LaggrHMt24ENKZ88fTWRoG8dvuQ0PrCRMuP7ZScJrTbi2aghMFwQ9isNZ6kfQX7CYKsGJ7prNOrZ6-bQr5o3tlkH.jpg" alt="Mantenimiento industrial en terreno">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/4_mantenimiento/6162F3LdAvbohe5MbEHtWyqZc3G0TPqJwbgh20Bg9gYZJm7ZFLhnpwwvoLGnIWhQFA9e5Ukm_36y0iNP_-VraDmlVb4c4QmWNyHRqy0HdYAS5s_PgFQnh1Sj8ykZapGh1w1lJnGVtS3pU0GbX_C8zOEjxYCDkOBFAqpQTT0qRGyDLoDaoHOdIHia.jpg" alt="Técnico realizando mantenimiento">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/4_mantenimiento/QeOmC00gFAT5_usgFdzy18An-4xCRP1t5ATTME2_aQ5pO2_v24F6KxGQyhNk7euz0T6pxpI-1_fAqK9cDyVBjteAck5qebx0sZc7Ymk0WJcFxYC19uCg30K0dfL9eEcB9UpUjnBNDxeR_vtiZxMMZpgdButCdBb2NP8c62V93bvmdMyHPKQOxUvwhu.jpg" alt="Inspección de torre de enfriamiento">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/4_mantenimiento/jEGq3_inL47xmMDzNj1zEZ4sgSFTBw6LdzEySjOA6QmZChR9jWbV8zqQtwBuU_5VqaRg4Iu54WhEBMntQIO4wNUc7ksKitGJE_TpuXXOaAVGejEFEcn_CNRNBQLxIfpszLqYbSdw1DyYKPJlgNk9fpqSPJI6vi1CZ1N9uW6dXKp-VcUj9CHivd_j.jpg" alt="Revisión técnica de componentes">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/5_limpieza/nzJaVDh91XKPL0E6Aqi5vwv8c_BtYGHupsXR7U1Ppd4Wp9fRtK6Pip3iIYUW7sozTbeTqs5_JCRA5AabLG-Eaob_Wf_PtPfl1cSx5zSACjyjxMthnPvzqN2GpGeEM0qtp3KpUUT9ks3bikSX5d5BX87WfXIuVLAJD5TjySsJuZwJ0_KwwDn5h3ip.jpg" alt="Limpieza y desinfección de torre">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/3_componentes/IScP657EeF5l-XVQ-F6cgI-ZWDyfJX9VZppXB63ea6P7rGPfbe8yOE8fJpsskUog60zqc_6rgxj-dyJWAPZtPgNU68MYMIeBKPCMW02eAEkPyEjVpdCIUbRvMVkVUxO_GOy3HiILPCVWBNUa8dua2kfr6LmvqeaMnnCGGrER9B0yTG24Vpu9tPCJkE.jpg" alt="Ventiladores industriales">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="../images/galeria/3_componentes/pp09P9e5ZCrPJ6DRAf_7lD1HbvKNLNXChytn_30-6IjE4WQC_G2TQr36tIXLwtJRFa9rFh7JpYCYGKbSM14Hc0u34WXNU_LUYA6oyM4uEEfnshi9lm_ASHaObbFJtxv6g7WRzZTjIfgY_tzPGJ6sk0QJ7G7swFAzTpghw5hk-Ut3tffzR4rFEoRhYM.jpg" alt="Componentes mecánicos">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container position-relative">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="slide-tag mb-4 d-inline-block">¿Necesita Asistencia Técnica?</span>
+        <h2>Ponemos este Conocimiento<br>al Servicio de su Empresa</h2>
+        <p>Nuestro equipo de técnicos certificados está disponible para evaluar sus sistemas y entregar soluciones concretas.</p>
+        <div class="cta-btns">
+          <a href="/contactanos/" class="btn-cta"><i class="fas fa-envelope me-2"></i>Solicitar Evaluación</a>
+          <a href="/servicios/" class="btn-cta btn-cta-outline"><i class="fas fa-list me-2"></i>Ver Servicios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <img src="../images/logopie.png" alt="Fibertower" class="footer-logo">
+        <p class="footer-desc">Empresa especializada en mantenimiento, servicios y montajes de torres de enfriamiento. Soluciones industriales de alto rendimiento para todo Chile.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/fibertowerchile/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/56988327996" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <h5 class="footer-heading">Navegación</h5>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-angle-right"></i> Inicio</a></li>
+          <li><a href="/nosotros/"><i class="fas fa-angle-right"></i> Quiénes Somos</a></li>
+          <li><a href="/servicios/"><i class="fas fa-angle-right"></i> Servicios</a></li>
+          <li><a href="/tecnologia/"><i class="fas fa-angle-right"></i> Tecnología</a></li>
+          <li><a href="/contactanos/"><i class="fas fa-angle-right"></i> Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h5 class="footer-heading">Centro Técnico</h5>
+        <ul class="footer-links">
+          <li><a href="#funcionamiento"><i class="fas fa-angle-right"></i> Cómo Funciona</a></li>
+          <li><a href="#rellenos"><i class="fas fa-angle-right"></i> Tipos de Rellenos</a></li>
+          <li><a href="#componentes"><i class="fas fa-angle-right"></i> Componentes</a></li>
+          <li><a href="#mantenimiento"><i class="fas fa-angle-right"></i> Mantenimiento</a></li>
+          <li><a href="#balanceo"><i class="fas fa-angle-right"></i> Balanceo y Vibraciones</a></li>
+          <li><a href="#agua"><i class="fas fa-angle-right"></i> Tratamiento de Agua</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h5 class="footer-heading">Contacto</h5>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Sexta Avenida 1340, Dpto 1202, San Miguel, Santiago</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+56988327996">+56 9 8832 7996</a></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:contacto@fibertower.cl">contacto@fibertower.cl</a></div>
+        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun – Vie: 8:00 – 18:00<br>Emergencias: 24/7</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 <a href="/">Fibertower</a>. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
