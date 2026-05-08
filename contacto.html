@@ -144,31 +144,35 @@
           <h3 style="color: var(--primary); margin-bottom: 8px;">Solicita una Cotización</h3>
           <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 30px;">Complete el formulario y nos comunicaremos contigo a la brevedad con una propuesta personalizada.</p>
           <form id="contactForm">
+            <input type="hidden" name="_subject" value="Nueva solicitud de cotización — Fibertower">
+            <input type="hidden" name="_captcha" value="false">
             <div class="row g-4">
               <div class="col-md-6">
                 <label class="form-label">Nombre Completo <span style="color: var(--accent);">*</span></label>
-                <input type="text" class="form-control" placeholder="Ej: Juan González" required>
+                <input type="text" name="nombre" class="form-control" placeholder="Ej: Juan González" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Empresa</label>
-                <input type="text" class="form-control" placeholder="Nombre de su empresa">
+                <input type="text" name="empresa" class="form-control" placeholder="Nombre de su empresa">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Teléfono <span style="color: var(--accent);">*</span></label>
-                <input type="tel" class="form-control" placeholder="+56 9 8832 7996" required>
+                <input type="tel" name="telefono" class="form-control" placeholder="+56 9 XXXX XXXX" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Correo Electrónico <span style="color: var(--accent);">*</span></label>
-                <input type="email" class="form-control" placeholder="correo@empresa.cl" required>
+                <input type="email" name="email" class="form-control" placeholder="correo@empresa.cl" required>
               </div>
               <div class="col-12">
                 <label class="form-label">Tipo de Servicio</label>
-                <select class="form-select">
+                <select name="servicio" class="form-select">
                   <option value="" disabled selected>Seleccione el servicio que necesita</option>
                   <option>Mantención Preventiva</option>
                   <option>Mantención Correctiva / Emergencia</option>
                   <option>Montaje e Instalación</option>
                   <option>Reparación de Componentes</option>
+                  <option>Recambio de Rellenos Evaporativos</option>
+                  <option>Evaluación de Proyectos</option>
                   <option>Inspección Técnica</option>
                   <option>Asesoría Técnica</option>
                   <option>Contrato de Servicio Anual</option>
@@ -177,7 +181,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Tipo de Torre</label>
-                <select class="form-select">
+                <select name="tipo_torre" class="form-select">
                   <option value="" disabled selected>Tipo de torre de enfriamiento</option>
                   <option>Torre de Tiro Mecánico</option>
                   <option>Torre de Tiro Natural</option>
@@ -189,11 +193,11 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Región / Ciudad</label>
-                <input type="text" class="form-control" placeholder="Ej: Santiago, Antofagasta...">
+                <input type="text" name="ciudad" class="form-control" placeholder="Ej: Santiago, Antofagasta...">
               </div>
               <div class="col-12">
                 <label class="form-label">Descripción del Requerimiento <span style="color: var(--accent);">*</span></label>
-                <textarea class="form-control" rows="5" placeholder="Descríbanos brevemente su problema o necesidad. Cuanta más información nos entregue, mejor podremos asesorarle." required></textarea>
+                <textarea name="mensaje" class="form-control" rows="5" placeholder="Descríbanos brevemente su problema o necesidad. Cuanta más información nos entregue, mejor podremos asesorarle." required></textarea>
               </div>
               <div class="col-12">
                 <div class="d-flex align-items-start gap-3 p-3 rounded" style="background: rgba(0,150,199,0.06); border: 1px solid rgba(0,150,199,0.15);">

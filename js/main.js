@@ -91,21 +91,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Contact form feedback
+// Contact form — envío real vía Formsubmit.co AJAX
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const btn = this.querySelector('.btn-submit');
     const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje enviado!';
-    btn.style.background = '#28a745';
-    btn.style.borderColor = '#28a745';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      form.reset();
-    }, 3000);
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+    fetch('https://formsubmit.co/ajax/fibertowerchile@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success === 'true' || data.success === true) {
+        btn.innerHTML = '<i class="fas fa-check"></i> ¡Solicitud enviada!';
+        btn.style.background = '#28a745';
+        btn.style.borderColor = '#28a745';
+        form.reset();
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('Error en envío');
+      }
+    })
+    .catch(() => {
+      btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error al enviar';
+      btn.style.background = '#dc3545';
+      btn.style.borderColor = '#dc3545';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.disabled = false;
+      }, 4000);
+    });
   });
 }
