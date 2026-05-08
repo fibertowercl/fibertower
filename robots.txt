@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fibertowercl.github.io/fibertower/sitemap.xml
