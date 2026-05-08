@@ -423,5 +423,44 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var btn = form.querySelector('.btn-submit');
+    var orig = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    fetch('https://formsubmit.co/ajax/fibertowerchile@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(function(r) { return r.json(); })
+    .then(function() {
+      btn.innerHTML = '<i class="fas fa-check"></i> ¡Solicitud enviada!';
+      btn.style.background = '#28a745';
+      form.reset();
+      setTimeout(function() {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
+    })
+    .catch(function() {
+      btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error — intente de nuevo';
+      btn.style.background = '#dc3545';
+      setTimeout(function() {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
+    });
+  }, true);
+})();
+</script>
 </body>
 </html>
