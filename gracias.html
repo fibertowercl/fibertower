@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Mensaje Enviado! | Fibertower</title>
+  <link rel="icon" href="logofiber.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .gracias-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light);
+      padding: 60px 20px;
+    }
+    .gracias-card {
+      background: white;
+      border-radius: 20px;
+      padding: 60px 50px;
+      text-align: center;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+    }
+    .gracias-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      font-size: 2.5rem;
+      color: white;
+    }
+    .gracias-card h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .gracias-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .btn-volver {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin-top: 28px;
+      transition: opacity 0.2s;
+    }
+    .btn-volver:hover { opacity: 0.88; color: white; }
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #25d366;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 16px;
+    }
+    .whatsapp-link:hover { color: #1da851; }
+  </style>
+</head>
+<body>
+
+<section class="gracias-section">
+  <div class="gracias-card">
+    <div class="gracias-icon">
+      <i class="fas fa-check"></i>
+    </div>
+    <h1>¡Solicitud Enviada!</h1>
+    <p>Hemos recibido tu mensaje correctamente. Nuestro equipo técnico revisará tu requerimiento y te contactará a la brevedad con una propuesta personalizada.</p>
+    <p><strong>Tiempo de respuesta:</strong> Habitualmente respondemos dentro de las próximas 24 horas hábiles.</p>
+    <div style="background: rgba(0,150,199,0.06); border: 1px solid rgba(0,150,199,0.15); border-radius: 10px; padding: 16px; margin-top: 20px;">
+      <p style="margin: 0; font-size: 0.88rem;">¿Necesitas respuesta urgente? Contáctanos directamente por WhatsApp.</p>
+      <a href="https://wa.me/56988327996" class="whatsapp-link" target="_blank">
+        <i class="fab fa-whatsapp fa-lg"></i> +56 9 8832 7996
+      </a>
+    </div>
+    <a href="index.html" class="btn-volver">
+      <i class="fas fa-arrow-left"></i> Volver al Inicio
+    </a>
+  </div>
+</section>
+
+</body>
+</html>

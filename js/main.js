@@ -100,11 +100,4 @@ if (form) {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
   });
 
-  if (new URLSearchParams(window.location.search).get('enviado') === '1') {
-    const banner = document.createElement('div');
-    banner.style.cssText = 'background:#28a745;color:white;text-align:center;padding:16px 24px;border-radius:10px;margin-bottom:24px;font-weight:600;font-size:1rem;';
-    banner.innerHTML = '<i class="fas fa-check-circle" style="margin-right:8px;"></i>¡Solicitud enviada con éxito! Nos comunicaremos contigo a la brevedad.';
-    form.parentElement.insertBefore(banner, form);
-    window.history.replaceState({}, '', window.location.pathname);
-  }
 }
