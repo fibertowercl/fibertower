@@ -91,48 +91,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Contact form — envío real vía Formsubmit.co AJAX
+// Contact form — spinner al enviar + banner de éxito al volver con ?enviado=1
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  form.addEventListener('submit', function () {
     const btn = this.querySelector('.btn-submit');
-    const originalHTML = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-
-    fetch('https://formsubmit.co/ajax/fibertowerchile@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.success === 'true' || data.success === true) {
-        btn.innerHTML = '<i class="fas fa-check"></i> ¡Solicitud enviada!';
-        btn.style.background = '#28a745';
-        btn.style.borderColor = '#28a745';
-        form.reset();
-        setTimeout(() => {
-          btn.innerHTML = originalHTML;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-        }, 4000);
-      } else {
-        throw new Error('Error en envío');
-      }
-    })
-    .catch(() => {
-      btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error al enviar';
-      btn.style.background = '#dc3545';
-      btn.style.borderColor = '#dc3545';
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        btn.disabled = false;
-      }, 4000);
-    });
   });
+
+  if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:#28a745;color:white;text-align:center;padding:16px 24px;border-radius:10px;margin-bottom:24px;font-weight:600;font-size:1rem;';
+    banner.innerHTML = '<i class="fas fa-check-circle" style="margin-right:8px;"></i>¡Solicitud enviada con éxito! Nos comunicaremos contigo a la brevedad.';
+    form.parentElement.insertBefore(banner, form);
+    window.history.replaceState({}, '', window.location.pathname);
+  }
 }
