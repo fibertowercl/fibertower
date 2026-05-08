@@ -154,8 +154,8 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* ===== HERO ===== */
 .hero-section {
-  height: 100vh;
-  min-height: 600px;
+  height: 65vh;
+  min-height: 480px;
   position: relative;
   overflow: hidden;
   margin-top: 0;
@@ -1201,7 +1201,7 @@ section { padding: 85px 0; }
 }
 @media (max-width: 768px) {
   section { padding: 60px 0; }
-  .hero-section { height: 85vh; padding: 0; }
+  .hero-section { height: 60vh; padding: 0; }
   .navbar-brand img { max-height: 160px; }
   .main-navbar.scrolled .navbar-brand img { max-height: 125px; }
   .carousel-control-prev { left: 10px; }
