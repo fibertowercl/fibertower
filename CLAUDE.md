@@ -34,7 +34,11 @@ fibertower/
 ├── Mantencion.png              # Foto de mantención original
 ├── mantencion2.png             # Foto de mantención original 2
 └── images/
-    ├── newlogo.png             # Logo actual en navbar
+    ├── newlogo.png             # Logo original (fondo blanco) — ya no se usa en navbar
+    ├── newlogo_transparente_normal.png  # Logo con fondo transparente — usado en navbar ESCRITORIO
+    ├── newlogo_blanco.png      # Logo con letras blancas y fondo transparente — usado en navbar MÓVIL
+    ├── newlogo_transparent.png # Logo generado automáticamente (no usar, reemplazado por los anteriores)
+    ├── SPLASH.jpg              # Foto correcta de relleno splash (usada en /tecnologia/ #rellenos)
     ├── logopie.png             # Logo sin tagline (fondo blanco) — usado en footer
     ├── torresarriba.jpg        # Foto hero slider slide 1
     ├── Foto1.jpg               # Técnicos en torre azul (SINAX)
@@ -91,10 +95,10 @@ Las páginas internas (nosotros, servicios, contactanos) usan `../` para assets:
 4. About: `foto8.jpg` + badge "+10 años"
 5. Stats animados: 10+ años / 200+ proyectos / 150+ clientes / 98% satisfacción
 6. Servicios (6 cards): Foto1.jpg / foto3.jpg / foto7.jpg / recambio.png / evaluacion.png / electro.png
-7. Por qué elegirnos: foto4.jpg
+7. Por qué elegirnos: foto4.jpg — **SIN** tarjeta "Cobertura Nacional" (eliminada)
 8. Galería 3×3 con lightbox: las 9 fotos de images/
 9. CTA sección azul oscuro con patrón de gotas de agua SVG de fondo
-10. Footer
+10. Footer — dirección: **Oficina 1202** (no "Depto 1202")
 11. Statcounter fijo abajo-izquierda (`position:fixed; bottom:12px; left:12px; z-index:9999`)
 
 ### nosotros/index.html
@@ -142,6 +146,10 @@ Página Centro Técnico con sub-nav sticky y 8 secciones:
 
 CSS inline en `<style>` al inicio del `<body>`. Sub-nav: `position:sticky; top:76px; z-index:98`.
 Secciones con `scroll-margin-top: 130px` (navbar 76px + sub-nav 45px + margen).
+- `.small-img-row img` height: **520px** (se aumentó para que se vean bien las fotos)
+- Todas las imágenes de secciones técnicas tienen **lightbox táctil** (tap para ampliar en móvil, click en escritorio). Se distingue tap de scroll midiendo desplazamiento del dedo (<10px = tap). Script inline al final del `<body>`.
+- Foto relleno splash: `../images/SPLASH.jpg`
+- Foto sistema distribución: archivo `WW15uO4...` en `galeria2/distribucion/`
 
 ## Datos de Contacto
 - Teléfono: `+56 9 7807 9037` / `tel:+56978079037`
@@ -162,10 +170,16 @@ El formulario en `contactanos/index.html` usa **Formsubmit.co** en modo AJAX:
 ## Decisiones de Diseño Importantes
 
 ### Logo en Navbar
-`images/newlogo.png` — fondo blanco, funciona bien en navbar blanca.
+Dos versiones según pantalla (usando clases Bootstrap `d-none d-lg-block` / `d-lg-none`):
+- **Escritorio** (`d-none d-lg-block`): `images/newlogo_transparente_normal.png` — fondo transparente, colores normales, sobre navbar blanca.
+- **Móvil** (`d-lg-none`): `images/newlogo_blanco.png` — fondo transparente, letras blancas, sobre navbar azul navy.
+
+Tamaños:
 - Normal: `max-height: 260px`
 - Scrolled: `max-height: 185px`
 - Móvil: `max-height: 160px`
+
+El navbar en **móvil** tiene fondo azul navy (`var(--primary)`) con links blancos y botón hamburguesa blanco (definido en `@media (max-width: 992px)` en `style.css`).
 El efecto de crecer/achicarse al scrollear fue apreciado por el cliente.
 
 ### Logo en Footer
@@ -179,7 +193,9 @@ box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 **NO usar** `filter: brightness(0) invert(1)` — ambos logos tienen fondo blanco, no transparente. El filtro los convierte en cuadrado blanco sólido.
 
 ### Hero Slider
-- Altura: `height: 65vh; min-height: 480px` — tanto en `.hero-section` (CSS) como en cada `.carousel-item` (inline)
+- Altura escritorio: `height: 65vh; min-height: 480px` — tanto en `.hero-section` (CSS) como en cada `.carousel-item` (inline)
+- Altura móvil (`max-width: 768px`): `height: 70vh; min-height: 520px`
+- En móvil el caption está en `top: 58%` (en vez de 50%) para evitar que se superponga con el navbar
 - Deben coincidir para evitar espacio blanco bajo el slider
 - Slide 1 overlay: `rgba(2,62,125,0.55)` — más liviano para que se vea la foto
 
