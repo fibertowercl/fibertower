@@ -99,7 +99,7 @@ Las páginas internas (nosotros, servicios, contactanos) usan `../` para assets:
 8. Galería 3×3 con lightbox: las 9 fotos de images/
 9. CTA sección azul oscuro con patrón de gotas de agua SVG de fondo
 10. Footer — dirección: **Oficina 1202** (no "Depto 1202")
-11. Statcounter fijo abajo-izquierda (`position:fixed; bottom:12px; left:12px; z-index:9999`)
+11. Tracker propio (`js/tracker.js`) — registra visitas en localStorage
 
 ### nosotros/index.html
 - Historia empresa + foto3.jpg
@@ -212,7 +212,7 @@ Fondo azul oscuro con patrón de gotas de agua SVG como textura (dos capas: rell
 - Google Business Profile creado
 
 ## Analytics
-Statcounter (proyecto 13227052) integrado solo en `index.html`, visible como widget fijo abajo-izquierda con link "View My Stats" en blanco.
+Tracker propio integrado en **todas las páginas** (`js/tracker.js`). Registra visitas en localStorage del navegador. Panel de administración en `/analytics/` (protegido con contraseña, `noindex`). Statcounter fue eliminado.
 
 ## Cómo Publicar Cambios
 ```bash
